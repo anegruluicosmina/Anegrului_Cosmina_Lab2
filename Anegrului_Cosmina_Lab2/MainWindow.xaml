@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Anegrului_Cosmina_Lab2"
         mc:Ignorable="d"
         Title="Virtual Doughnuts Factory" Height="450" Width="800" ResizeMode="NoResize" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
-    <Grid>
+    <Grid x:Name="frmMain1" Loaded="frmMain_Loaded">
         <Label x:Name="lblTitle" Content="Doughnuts - Bake &amp; Sale" HorizontalAlignment="Center" Height="51" Margin="0,10,0,0" VerticalAlignment="Top" Width="293" FontWeight="Bold" FontSize="24"/>
         <GroupBox x:Name="gbFilled" Header="Raised" Margin="125,91,488,217" FontWeight="Bold">
             <Canvas HorizontalAlignment="Left" Height="101" VerticalAlignment="Top" Width="169">
@@ -43,19 +43,19 @@
                 <Button x:Name="btnCheckOut" Content="Check Out" Height="34" Canvas.Left="487" Canvas.Top="100" Width="84"/>
             </Canvas>
         </GroupBox>
-        <Menu x:Name="mnuMain" HorizontalAlignment="Left" Height="21" VerticalAlignment="Top" Width="107">
+        <Menu x:Name="txtQuantaty" HorizontalAlignment="Left" Height="21" VerticalAlignment="Top" Width="107" KeyUp="txtQuantity_KeyPress">
             <MenuItem Header="File">
-                <MenuItem Header="Exit"/>
+                <MenuItem Header="Exit" Click="exitToolStripMenuItem_Click"/>
             </MenuItem>
             <MenuItem Header="Doughnuts">
                 <MenuItem Header="Make">
                     <MenuItem Header="Raised">
-                        <MenuItem x:Name="glazedMenuItem" Header="Glazed"/>
-                        <MenuItem x:Name="sugarMenuItem" Header="Sugar"/>
+                        <MenuItem x:Name="glazedToolStripMenuItem" Header="Glazed" Click="glazedToolStripMenuItem_Click" IsCheckable="True"/>
+                        <MenuItem x:Name="sugarToolStripMenuItem" Header="Sugar" IsCheckable="True" Click="sugarToolStripMenuItem_Click"/>
                     </MenuItem>
                     <MenuItem Header="Filled"/>
                 </MenuItem>
-                <MenuItem Header="Stop"/>
+                <MenuItem x:Name="mnuStop" Header="Stop" Click="stopToolStripMenuItem_Click"/>
             </MenuItem>
         </Menu>
 
