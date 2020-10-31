@@ -1,10 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows.Threading;
 
 namespace Anegrului_Cosmina_Lab2
 {
+    public enum DoughnutType
+    {
+        Glazed,
+        Sugar,
+        Lemon,
+        Chocolate,
+        Vanilla
+    }
+
     class DoughnutMachine
     {
         private DoughnutType mFlavor;
@@ -77,14 +84,7 @@ namespace Anegrului_Cosmina_Lab2
             doughnutTimer.Start();
         }
     }
-    public enum DoughnutType
-    {
-        Glazed,
-        Sugar,
-        Lemon,
-        Chocolate,
-        Vanilla
-    }
+
     class Doughnut
     {
         private DoughnutType mFlavor;
