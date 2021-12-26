@@ -1,6 +1,7 @@
 ﻿using Anegrului_Cosmina_Lab2.Models.LibraryViewModels;
 using LibraryModel.Data;
 using LibraryModel.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace Anegrului_Cosmina_Lab2.Controllers
 {
+    [Authorize(Policy = "OnlySales")]
     public class PublishersController : Controller
     {
         private readonly LibraryContext _context;

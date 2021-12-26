@@ -8,9 +8,11 @@ using Microsoft.EntityFrameworkCore;
 using LibraryModel.Data;
 using Anegrului_Cosmina_Lab2.Models;
 using LibraryModel.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Anegrului_Cosmina_Lab2.Controllers
 {
+    [Authorize(Roles = "Employee")]
     public class BooksController : Controller
     {
         private readonly LibraryContext _context;
@@ -21,6 +23,7 @@ namespace Anegrului_Cosmina_Lab2.Controllers
         }
 
         // GET: Books
+        [AllowAnonymous]
         public async Task<IActionResult> Index(string sortOrder, string currentFilter, string searchString, int? pageNumber)
         {
             ViewData["CurrentSort"] = sortOrder;
@@ -61,6 +64,7 @@ namespace Anegrului_Cosmina_Lab2.Controllers
         }
 
         // GET: Books/Details/5
+        [AllowAnonymous]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
