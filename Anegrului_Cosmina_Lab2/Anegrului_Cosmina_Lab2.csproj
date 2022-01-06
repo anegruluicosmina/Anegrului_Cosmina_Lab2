@@ -20,8 +20,4 @@
     <ProjectReference Include="..\LibraryModel\LibraryModel.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Views\NewFolder\" />
-  </ItemGroup>
-
 </Project>
